@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: raw_data
+    description: >
+      This raw data ingested by Fivetran
+    database: NG_CHALLENGE
+    schema: raw_data
+    tables:
+     - name: CE_DATA_0_ALL_CESSERIES
+     - name: CE_DATATYPE
+     - name: CE_FOOTNOTE
+     - name: CE_INDUSTRY
+     - name: CE_PERIOD
+     - name: CE_SEASONAL
+     - name: CE_SERIES
+     - name: CE_SUPERSECTOR

@@ -1,0 +1,27 @@
+analytics:
+  outputs:
+    dev:
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT_DBT') }}"
+      database: "{{ env_var('SNOWFLAKE_DATABASE_DBT') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD_DBT') }}"
+      role: "{{ env_var('SNOWFLAKE_ROLE_DBT') }}"
+      schema: dev
+      query_tag: "dbt-dev"
+      threads: 1
+      type: snowflake
+      user: "{{ env_var('SNOWFLAKE_USER_DBT') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE_DBT') }}"
+
+    prod:
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT_DBT') }}"
+      database: "{{ env_var('SNOWFLAKE_DATABASE_DBT') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD_DBT') }}"
+      role: "{{ env_var('SNOWFLAKE_ROLE_DBT') }}"
+      schema: "{{ env_var('DEV_SCHEMA_DBT') }}"
+      threads: 1
+      query_tag: "dbt-prod"
+      type: snowflake
+      user: "{{ env_var('SNOWFLAKE_USER_DBT') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE_DBT') }}"
+
+  target: dev
